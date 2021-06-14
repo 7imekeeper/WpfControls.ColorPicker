@@ -6,4 +6,9 @@
     <RootNamespace>WpfControls</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Core\WpfControls.Core.csproj" />
+    <ProjectReference Include="..\NumericUpDown\WpfControls.NumericUpDown.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -4,17 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 			 xmlns:local="clr-namespace:WpfControls"
-			 xmlns:c="clr-namespace:WpfControls.Converters"
              mc:Ignorable="d"
 			 x:Name="Picker">
 	<UserControl.Resources>
-		<c:CoerceColorConverter x:Key="A255" A="255"/>
-		<c:CoerceColorConverter x:Key="R0" A="255" R="0"/>
-		<c:CoerceColorConverter x:Key="R255" A="255" R="255"/>
-		<c:CoerceColorConverter x:Key="G0" A="255" G="0"/>
-		<c:CoerceColorConverter x:Key="G255" A="255" G="255"/>
-		<c:CoerceColorConverter x:Key="B0" A="255" B="0"/>
-		<c:CoerceColorConverter x:Key="B255" A="255" B="255"/>
+		<CoerceColorConverter x:Key="A255" A="255"/>
+		<CoerceColorConverter x:Key="R0" A="255" R="0"/>
+		<CoerceColorConverter x:Key="R255" A="255" R="255"/>
+		<CoerceColorConverter x:Key="G0" A="255" G="0"/>
+		<CoerceColorConverter x:Key="G255" A="255" G="255"/>
+		<CoerceColorConverter x:Key="B0" A="255" B="0"/>
+		<CoerceColorConverter x:Key="B255" A="255" B="255"/>
 	</UserControl.Resources>
 	<Grid Grid.IsSharedSizeScope="True">
 		<Grid.RowDefinitions>
@@ -32,7 +31,7 @@
 			</Grid.ColumnDefinitions>
 			<local:SLCanvas x:Name="SLSlider" Grid.Row="0" Grid.Column="0" MinWidth="100" MinHeight="100" SelectedColor="{Binding Color, ElementName=Picker, Converter={StaticResource A255}, Mode=TwoWay}"
 					  BorderBrush="{x:Static SystemColors.ActiveBorderBrush}" BorderThickness="1"/>
-			<local:ColorSlider x:Name="HSlider" Orientation="Vertical" Background="{x:Static MoreBrushes.HueBrush}" Grid.Row="0" Grid.Column="2" MinWidth="20" Value="{Binding Hue, ElementName=SLSlider}" Maximum="359"
+			<local:ColorSlider x:Name="HSlider" Orientation="Vertical" Background="{x:Static SpecialBrushes.HueGradient}" Grid.Row="0" Grid.Column="2" MinWidth="20" Value="{Binding Hue, ElementName=SLSlider}" Maximum="359"
 					  BorderBrush="{x:Static SystemColors.ActiveBorderBrush}" BorderThickness="1"/>
 		</Grid>
 		<StackPanel Grid.Row="1">

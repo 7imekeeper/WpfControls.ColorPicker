@@ -113,7 +113,7 @@ namespace WpfControls
 		protected Panel Bounds { get; set; }
 		protected GradientStop HueGradientStop { get; set; }
 
-		protected Color HueColor => ColorExtensions.FromHsl(Hue, 1f, 0.5f);
+		protected Color HueColor => HslColorHelper.FromHsl(Hue, 1f, 0.5f);
 
 		static SLCanvas()
 		{
@@ -154,7 +154,7 @@ namespace WpfControls
 			if (range != 0)
 				S = range / (1 - Math.Abs(2 * L - 1));
 
-			return ColorExtensions.FromHsl(Hue, S, L);
+			return HslColorHelper.FromHsl(Hue, S, L);
 		}
 
 		public override void OnApplyTemplate()
@@ -172,7 +172,7 @@ namespace WpfControls
 			}
 
 			if (HueGradientStop != null)
-				HueGradientStop.Color = ColorExtensions.FromHsl(Hue, 1f, 0.5f);
+				HueGradientStop.Color = HslColorHelper.FromHsl(Hue, 1f, 0.5f);
 
 			SelectorPosition = SelectorPositionFromColor();
 		}

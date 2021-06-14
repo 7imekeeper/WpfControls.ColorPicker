@@ -23,5 +23,3 @@ using System.Windows.Markup;
 // be used without the need for prefixes.
 
 [assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", "WpfControls")]
-[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", "WpfControls.Converters")]
-[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", "WpfControls.Media")]
