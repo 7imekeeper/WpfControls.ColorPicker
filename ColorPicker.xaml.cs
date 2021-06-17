@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -108,6 +109,20 @@ namespace WpfControls
 
 		#region Color
 
+		public class ColorChangedEventArgs : EventArgs
+        {
+			public Color Color { get; set; }
+
+			public ColorChangedEventArgs() { }
+
+			public ColorChangedEventArgs(Color color) =>
+				Color = color;
+		}
+
+		public delegate void ColorChangedEvent(object sender, ColorChangedEventArgs e);
+
+		public event ColorChangedEvent OnColorChanged;
+
 		public static readonly DependencyProperty ColorProperty = DependencyProperty.Register(
 			nameof(Color), typeof(Color), typeof(ColorPicker), new PropertyMetadata(Colors.Red, ColorChanged));
 
@@ -126,6 +141,7 @@ namespace WpfControls
 				}
 				if (!p.ColorHex.IsFocused)
 					p.UpdateHex();
+				p.OnColorChanged?.Invoke(p, new ColorChangedEventArgs(p.Color));
 			}
 		}
 
